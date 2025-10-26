@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>示例页面 — 1.html</title>
+    <style>
+        :root{font-family:system-ui,-apple-system,"Segoe UI","PingFang SC",sans-serif;color:#222}
+        body{margin:0;line-height:1.6;background:#f7f8fa}
+        header{background:#0366d6;color:#fff;padding:1rem}
+        main{max-width:900px;margin:2rem auto;background:#fff;padding:1.5rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+        footer{color:#666;text-align:center;padding:1rem;font-size:.9rem}
+        .btn{display:inline-block;padding:.5rem .9rem;background:#0366d6;color:#fff;border-radius:6px;text-decoration:none;border:0;cursor:pointer}
+        pre{background:#f3f4f6;padding:.8rem;border-radius:6px;overflow:auto}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>示例页面</h1>
+        <p style="margin:.25rem 0 .25rem .02rem;opacity:.9">文件位置: C:\Users\奶龙\Desktop\vscode的\1.html</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>快速说明</h2>
+            <p>此文件为基础 HTML 模板，已包含常用 meta、样式与示例脚本。可直接在 VS Code 中编辑并保存。</p>
+        </section>
+
+        <section>
+            <h2>演示交互</h2>
+            <p id="greet">点击下方按钮显示问候与当前语言环境。</p>
+            <button class="btn" id="btnGreet">显示问候</button>
+        </section>
+
+        <section>
+            <h2>示例代码片段</h2>
+            <pre><code>&lt;!-- 在此处编写你的 HTML/JS/CSS --&gt;
+&lt;h2&gt;你的内容&lt;/h2&gt;
+&lt;script&gt;console.log('hello');&lt;/script&gt;</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <small>示例页 — 编辑以适配你的项目</small>
+    </footer>
+
+    <script>
+        document.getElementById('btnGreet').addEventListener('click', function(){
+            const lang = navigator.language || navigator.userLanguage || 'unknown';
+            const hour = new Date().getHours();
+            let part = '晚上';
+            if(hour >= 6 && hour < 12) part = '早上';
+            else if(hour >= 12 && hour < 18) part = '下午';
+            const msg = `${part}好！ 当前语言环境: ${lang}`;
+            document.getElementById('greet').textContent = msg;
+        });
+    </script>
+</body>
+</html>
